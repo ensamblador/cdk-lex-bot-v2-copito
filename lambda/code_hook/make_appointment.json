@@ -1,0 +1,7 @@
+{
+    "AppointmentType": "¿Qué tipo de cita le gustaría programar? Limpieza, blanqueamiento o tratamiento de conducto?",
+    "Time": "¿Para qué hora quiere programar la cita?",
+    "Date": "¿Para qué fecha quiere programar la cita?",
+    "Confirm1": "Está bien, entonces no continuaré. ¿Qué más puedo hacer por ti?",
+    "Response": "Su Hora para {appointment_type} el día {appointment_date} a las {appointment_time} ha sido confirmada. "
+}

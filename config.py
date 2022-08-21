@@ -1,9 +1,10 @@
+from cgitb import handler
 from aws_cdk import (Duration,aws_lambda)
 
-BOT_NAME = 'Agendar'
+BOT_NAME = 'Agendar-v2'
 
 DATA_PRIVACY = {'ChildDirected': False}
-SENTIMENT_ANALYSYS_SETTINGS = {}
+SENTIMENT_ANALYSYS_SETTINGS = {'DetectSentiment': False}
 IDLE_SESION_TIMEOUT_IN_SECONDS = 120
 
 STACK_NAME = f'LEX-V2-{BOT_NAME.upper()}'
@@ -21,5 +22,6 @@ BASE_LAMBDA_CONFIG = dict (
     tracing= aws_lambda.Tracing.ACTIVE)
 
 PYTHON_LAMBDA_CONFIG = dict(
-    runtime=aws_lambda.Runtime.PYTHON_3_8, 
+    runtime=aws_lambda.Runtime.PYTHON_3_8,
+    handler = 'lambda_function.lambda_handler',
     **BASE_LAMBDA_CONFIG)
