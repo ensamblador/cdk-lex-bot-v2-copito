@@ -1,0 +1,108 @@
+{
+  "inputMode": "Text",
+  "sessionId": "448716646650542",
+  "inputTranscript": "10 AM",
+  "interpretations": [
+    {
+      "intent": {
+        "slots": {
+          "AppointmentType": {
+            "shape": "Scalar",
+            "value": {
+              "originalValue": "dentista",
+              "resolvedValues": [],
+              "interpretedValue": "dentista"
+            }
+          },
+          "Time": {
+            "shape": "Scalar",
+            "value": {
+              "originalValue": "10 AM",
+              "resolvedValues": ["10:00"],
+              "interpretedValue": "10:00"
+            }
+          },
+          "Date": {
+            "shape": "Scalar",
+            "value": {
+              "originalValue": "mañana",
+              "resolvedValues": ["2022-08-22"],
+              "interpretedValue": "2022-08-22"
+            }
+          }
+        },
+        "confirmationState": "None",
+        "name": "MakeAppointment",
+        "state": "InProgress"
+      }
+    },
+    {
+      "intent": {
+        "slots": {},
+        "confirmationState": "None",
+        "name": "FallbackIntent",
+        "state": "InProgress"
+      }
+    },
+    {
+      "intent": {
+        "slots": {},
+        "confirmationState": "None",
+        "name": "HablarEjecutivo",
+        "state": "InProgress"
+      },
+      "nluConfidence": 0.31
+    }
+  ],
+  "sessionState": {
+    "sessionAttributes": {
+      "previous_message": "[{\"contentType\": \"PlainText\", \"content\": \"\\u00bfPara qu\\u00e9 hora quiere programar la cita?\"}]",
+      "previous_dialog_action_type": "ElicitSlot",
+      "previous_slot_to_elicit": "Time"
+    },
+    "activeContexts": [],
+    "intent": {
+      "slots": {
+        "AppointmentType": {
+          "shape": "Scalar",
+          "value": {
+            "originalValue": "dentista",
+            "resolvedValues": [],
+            "interpretedValue": "dentista"
+          }
+        },
+        "Time": {
+          "shape": "Scalar",
+          "value": {
+            "originalValue": "10 AM",
+            "resolvedValues": ["10:00"],
+            "interpretedValue": "10:00"
+          }
+        },
+        "Date": {
+          "shape": "Scalar",
+          "value": {
+            "originalValue": "mañana",
+            "resolvedValues": ["2022-08-22"],
+            "interpretedValue": "2022-08-22"
+          }
+        }
+      },
+      "confirmationState": "None",
+      "name": "MakeAppointment",
+      "state": "InProgress"
+    },
+    "originatingRequestId": "167c6659-81b5-4bcb-aacc-26ab32b6f4e4"
+  },
+  "responseContentType": "text/plain; charset=utf-8",
+  "invocationSource": "DialogCodeHook",
+  "messageVersion": "1.0",
+  "bot": {
+    "aliasName": "TestBotAlias",
+    "aliasId": "TSTALIASID",
+    "name": "Agendar-v2",
+    "version": "DRAFT",
+    "localeId": "es_US",
+    "id": "QABPGXLEYZ"
+  }
+}
