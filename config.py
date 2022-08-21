@@ -1,6 +1,11 @@
 from aws_cdk import (Duration,aws_lambda)
 
 BOT_NAME = 'Agendar'
+
+DATA_PRIVACY = {'ChildDirected': False}
+SENTIMENT_ANALYSYS_SETTINGS = {}
+IDLE_SESION_TIMEOUT_IN_SECONDS = 120
+
 STACK_NAME = f'LEX-V2-{BOT_NAME.upper()}'
 
 TAGS =  {

@@ -1,3 +1,4 @@
+from typing import Any
 import aws_cdk.aws_lex as lex
 from constructs import Construct
 from aws_cdk import ( 
@@ -5,15 +6,16 @@ from aws_cdk import (
     aws_iam as iam,
 )
 
-from config import (BOT_NAME, DATA_PRIVACY, SENTIMENT_ANALYSYS_SETTINGS, IDLE_SESION_TIMEOUT_IN_SECONDS)
+
+inpo
 
 from project_constructs.lex_v2_role import LexV2Role
 
 print("Bot Name:", BOT_NAME)
 
-data_privacy = DATA_PRIVACY
-sentiment_analysis_settings = SENTIMENT_ANALYSYS_SETTINGS
-idle_session_ttl_in_seconds = IDLE_SESION_TIMEOUT_IN_SECONDS
+data_privacy = {'ChildDirected': False}
+sentiment_analysis_settings = Any
+idle_session_ttl_in_seconds=120
 
 
 
@@ -23,6 +25,7 @@ class LexBotV2(Construct):
 
 
         bot_role = LexV2Role(self, 'SLRLexV2')
+        print (bot_role.arn)
 
         
         cfn_bot = lex.CfnBot(self, "CfnBot",
@@ -31,8 +34,6 @@ class LexBotV2(Construct):
             name=BOT_NAME,
             role_arn=bot_role.arn
         )
-        
-        cfn_bot.add_depends_on(bot_role.role)
         
         
         """
