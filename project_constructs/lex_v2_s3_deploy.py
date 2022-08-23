@@ -13,6 +13,9 @@ class S3BotFiles(Construct):
             destination_bucket=self.bucket,
             destination_key_prefix="bot_files"
         )
-        self.key = {"agenda": "bot_files/agendar-cita-es.zip"}
+        self.key = {
+            "agenda": "bot_files/agendar-cita-es.zip",
+            "copito": "bot_files/copito-indicadores.zip",
+            }
 
 

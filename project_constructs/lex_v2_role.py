@@ -12,7 +12,7 @@ class LexV2Role(Construct):
         crea_rol = True
         account_id = Stack.of(self).account
         
-        role_name = "AWSServiceRoleForLexV2Bots_20220822"
+        role_name = "AWSServiceRoleForLexV2Bots_Copito"
         """
         try:
             existing_role = boto3.client('iam').get_role(RoleName = role_name)
@@ -26,14 +26,14 @@ class LexV2Role(Construct):
             self.arn = f'arn:aws:iam::{account_id}:role/aws-service-role/lexv2.amazonaws.com/{role_name}'
             bot_role = iam.CfnServiceLinkedRole( self, 'BotRole',
                 aws_service_name='lexv2.amazonaws.com',
-                custom_suffix="20220822",
+                custom_suffix="Copito",
             )
             self.role = bot_role
-            if SENTIMENT_ANALYSYS_SETTINGS['DetectSentiment'] == True:
+            #if SENTIMENT_ANALYSYS_SETTINGS['DetectSentiment'] == True:
 
-                policy = iam.Policy(self, "comprehend",statements=[
-                    iam.PolicyStatement(actions=["Comprehend:*"], resources=['*'])]
-                )
+            #    policy = iam.Policy(self, "comprehend",statements=[
+            #        iam.PolicyStatement(actions=["Comprehend:*"], resources=['*'])]
+            #    )
                 #iam.Role.from_role_arn(self, "rol", self.arn).attach_inline_policy(policy=policy)
 
 

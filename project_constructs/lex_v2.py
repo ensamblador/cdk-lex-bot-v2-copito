@@ -70,7 +70,7 @@ class LexBotV2(Construct):
             role_arn=bot_role.arn,
             bot_file_s3_location=lex.CfnBot.S3LocationProperty(
                 s3_bucket=s3_bots.s3deploy.deployed_bucket.bucket_name,
-                s3_object_key=s3_bots.key['agenda']),
+                s3_object_key=s3_bots.key['copito']),
             auto_build_bot_locales=True,
             description=f"{BOT_NAME}-CDK Generado",
             test_bot_alias_settings=lex.CfnBot.TestBotAliasSettingsProperty(

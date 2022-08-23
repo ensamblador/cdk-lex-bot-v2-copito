@@ -1,7 +1,7 @@
 from cgitb import handler
 from aws_cdk import (Duration,aws_lambda)
 
-BOT_NAME = 'Agendar-v2'
+BOT_NAME = 'copito-indicadores'
 
 DATA_PRIVACY = {'ChildDirected': False}
 SENTIMENT_ANALYSYS_SETTINGS = {'DetectSentiment': False}

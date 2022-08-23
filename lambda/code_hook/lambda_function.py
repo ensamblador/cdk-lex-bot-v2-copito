@@ -10,6 +10,9 @@ import os
 import logging
 import dialogstate_utils as dialog
 import fallback
+import saludo
+import otros_indicadores
+import datos_indicador
 import make_appointment
 
 logger = logging.getLogger()
@@ -32,17 +35,34 @@ def dispatch(intent_request):
     
     # Default dialog state is set to delegate
     next_state = dialog.delegate(active_contexts, session_attributes, intent)
+
+    
+    
     
     # Dispatch to in-built Lex intents
     if intent_name == 'FallbackIntent':
         next_state = fallback.handler(intent_request)
 
+    # Dispatch to in-built Lex intents
+    if intent_name == 'SaludoIntent':
+        next_state = saludo.handler(intent_request)
+
+
+    # Dispatch to in-built Lex intents
+    if intent_name == 'OtrosIndicadoresIntent':
+        next_state = otros_indicadores.handler(intent_request)
+
+
+    # Dispatch to in-built Lex intents
+    if intent_name == 'DatosIndicador':
+        next_state = datos_indicador.handler(intent_request)
     
     # Dispatch to the respective bot's intent handlers
     
     if intent_name == 'MakeAppointment':
         next_state = make_appointment.handler(intent_request)
 
+    print (next_state)
     
     return next_state
 
