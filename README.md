@@ -1,4 +1,39 @@
 
+# Bot Lex v2 usando CDK
+
+Este proyecto despliega lo siguiente:
+
+## 1. Bot copito indicadores 
+
+Nos entrega un menú que puede derivar a un submenú. En todo los casos se trata de obtener el valor del indicador Dolar, UF, UTM, IMACEC, IPC (valores ficticios provistos por la funcion lamnda)
+
+
+<img src="bots-copito.jpg">
+
+
+## 2. Opcional Bot de Agendas
+
+en este caso solo hay una intención (agendar cita), una vez completados los datos en el diálogo, la función lambda realiza el fulfillment.
+
+Para desplegar este bot de agendas modifique el archivo `cdk_lex_bot_v2_stack.py` reemplazando:
+
+```python 
+lexBoxCopito = LexBotV2(self, 'bot_copito', 'copito')
+```
+por
+
+```python 
+lexBoxAgenda = LexBotV2(self, 'bot_agenda', 'agenda')
+```
+
+
+<img src="bots-agenda.jpg">
+
+Para desplegar el proyecto siga las instrucciones de [Cloud Development Kit](https://aws.amazon.com/cdk/) a continuación.
+
+
+
+
 # Welcome to your CDK Python project!
 
 This is a blank project for CDK development with Python.

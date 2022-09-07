@@ -22,10 +22,10 @@ def request(indicador, fecha):
     fecha_d = fecha_parts[2]
     
     requested_url = f'https://mindicador.cl/api/{ind}/{fecha_d}-{fecha_m}-{fecha_a}'
-    response = requests.request("GET", requested_url)
-    print (response.text)
-    valor =  json.loads(response.text)['serie'][0]['valor']
-    #valor = 100
+    #response = requests.request("GET", requested_url)
+    #print (response.text)
+    #valor =  json.loads(response.text)['serie'][0]['valor']
+    valor = 100
     return valor
 
 

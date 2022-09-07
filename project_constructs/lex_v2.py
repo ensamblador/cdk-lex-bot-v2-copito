@@ -21,14 +21,14 @@ idle_session_ttl_in_seconds = IDLE_SESION_TIMEOUT_IN_SECONDS
 
 
 class LexBotV2(Construct):
-    def __init__(self, scope: Construct, id: str, **kwargs) -> None:
+    def __init__(self, scope: Construct, id: str, bot_assets, **kwargs) -> None:
         super().__init__(scope, id, **kwargs)
 
 
-        bot_role = LexV2Role(self, 'SLRLexV2')
-        s3_bots  = S3BotFiles(self, 's3bots')
-        code_hook = LambdaCodeHook(self, 'codeHook')
-        log_group = CWLogGroup(self, "logGroup")
+        bot_role = LexV2Role(self, f'SLRLexV2{bot_assets}')
+        s3_bots  = S3BotFiles(self, f's3bots{bot_assets}')
+        code_hook = LambdaCodeHook(self, f'codeHook{bot_assets}')
+        log_group = CWLogGroup(self, f'logGroup{bot_assets}')
 
 
 
@@ -70,7 +70,7 @@ class LexBotV2(Construct):
             role_arn=bot_role.arn,
             bot_file_s3_location=lex.CfnBot.S3LocationProperty(
                 s3_bucket=s3_bots.s3deploy.deployed_bucket.bucket_name,
-                s3_object_key=s3_bots.key['copito']),
+                s3_object_key=s3_bots.key[bot_assets]),
             auto_build_bot_locales=True,
             description=f"{BOT_NAME}-CDK Generado",
             test_bot_alias_settings=lex.CfnBot.TestBotAliasSettingsProperty(

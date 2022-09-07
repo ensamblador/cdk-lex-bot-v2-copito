@@ -12,4 +12,6 @@ class CdkLexBotV2Stack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        lexBot = LexBotV2(self, 'bot_construct')
+        lexBoxCopito = LexBotV2(self, 'bot_copito', 'copito')
+
+
